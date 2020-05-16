@@ -27,6 +27,7 @@ module.exports = class extends Generator {
         type: "input",
         name: "description",
         message: "Your Slack App description",
+        default: "New Slack App",
       },
       {
         type: "input",
