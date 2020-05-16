@@ -2,11 +2,10 @@
 const Generator = require("yeoman-generator");
 const chalk = require("chalk");
 const yosay = require("yosay");
-const extend = require("deep-extend");
+const _ = require("lodash");
 
 module.exports = class extends Generator {
   prompting() {
-    // Have Yeoman greet the user.
     this.log(
       yosay(`Welcome to the rad ${chalk.red("generator-slack-app")} generator!`)
     );
@@ -43,15 +42,6 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    const pkg = this.fs.readJSON(this.templatePath("_package.json"), {});
-
-    extend(pkg, {
-      name: this.props.name,
-      version: this.props.version,
-      description: this.props.description,
-      main: this.props.main,
-    });
-
     this.fs.copy(this.templatePath("env"), this.destinationPath(".env"));
     this.fs.copy(
       this.templatePath("gitignore"),
@@ -62,7 +52,21 @@ module.exports = class extends Generator {
       this.destinationPath(this.props.main)
     );
 
-    this.fs.writeJSON(this.destinationPath("package.json"), pkg);
+    const packageTpl = _.template(
+      JSON.stringify(this.fs.readJSON(this.templatePath("_package.json")))
+    );
+
+    this.fs.writeJSON(
+      this.destinationPath("package.json"),
+      JSON.parse(
+        packageTpl({
+          slackAppName: this.props.name,
+          slackAppDescription: this.props.description,
+          slackAppVersion: this.props.version,
+          slackAppEntryPoint: this.props.main,
+        })
+      )
+    );
   }
 
   install() {
