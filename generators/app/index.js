@@ -49,6 +49,10 @@ module.exports = class extends Generator {
       this.destinationPath(".gitignore")
     );
     this.fs.copy(
+      this.templatePath("Procfile"),
+      this.destinationPath("Procfile")
+    );
+    this.fs.copy(
       this.templatePath("_app.js"),
       this.destinationPath(this.props.main)
     );

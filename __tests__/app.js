@@ -16,6 +16,7 @@ describe("generator-slack-app:app", () => {
   it("creates files", () => {
     assert.file([".env"]);
     assert.file([".gitignore"]);
+    assert.file(["Procfile"]);
     assert.file(["app.js"]);
     assert.file(["package.json"]);
   });
