@@ -1,0 +1,13 @@
+{
+  "name": "",
+  "description": "",
+  "version": "",
+  "main": "",
+  "scripts": {
+    "test": "echo no test"
+  },
+  "dependencies": {
+    "@slack/bolt": "^2.0.1",
+    "dotenv": "^8.2.0"
+  }
+}
