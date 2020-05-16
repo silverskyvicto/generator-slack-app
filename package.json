@@ -8,7 +8,7 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "",
+    "slack",
     "yeoman-generator"
   ],
   "devDependencies": {
@@ -29,7 +29,8 @@
   "dependencies": {
     "yeoman-generator": "^4.10.1",
     "chalk": "^4.0.0",
-    "yosay": "^2.0.2"
+    "yosay": "^2.0.2",
+    "lodash": "^4.17.15"
   },
   "jest": {
     "testEnvironment": "node"
