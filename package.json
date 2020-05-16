@@ -1,8 +1,8 @@
 {
   "name": "generator-slack-app",
-  "version": "0.0.0",
-  "description": "",
-  "homepage": "",
+  "version": "0.1.0",
+  "description": "Yeoman Generator for Slack App",
+  "homepage": "https://github.com/silverskyvicto/generator-slack-app",
   "files": [
     "generators"
   ],
@@ -70,6 +70,13 @@
     "pretest": "eslint .",
     "test": "jest"
   },
-  "repository": "silverskyvicto/generator-slack-app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silverskyvicto/generator-slack-app"
+  },
+  "bugs": {
+    "url": "https://github.com/silverskyvicto/generator-slack-app/issues"
+  },
+  "author": "Yuuki Ebihara",
   "license": "Apache-2.0"
 }

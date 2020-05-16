@@ -25,7 +25,7 @@ yo slack-app
 
 ## License
 
-Apache-2.0 © [Yuuki Ebihara]()
+Apache-2.0 © [Yuuki Ebihara](https://github.com/silverskyvicto)
 
 
 [npm-image]: https://badge.fury.io/js/generator-slack-app.svg
